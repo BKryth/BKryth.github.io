@@ -1,0 +1,13 @@
+@font-face {
+    font-family: PixelFont;
+    src: url("../font/VT323-Regular.ttf");
+}
+a, a:hover{
+    color: inherit;
+}
+.tictactoebox {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 20vh;
+}
