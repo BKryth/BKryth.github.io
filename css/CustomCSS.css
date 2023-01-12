@@ -3,7 +3,7 @@
     src: url("../font/VT323-Regular.ttf");
 }
 body {
-    background-image: url('img/pixelwallpaper.gif');
+    background-image: url('../img/pixelwallpaper.gif');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
