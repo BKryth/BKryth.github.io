@@ -2,10 +2,23 @@
     font-family: PixelFont;
     src: url("../font/VT323-Regular.ttf");
 }
+body {
+    background-image: url('img/pixelwallpaper.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+    font-family: PixelFont;
+}
 a, a:hover{
     color: inherit;
 }
-.tictactoebox .carousel-image{
+.carousel-image {
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+.tictactoebox {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

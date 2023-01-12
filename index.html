@@ -41,7 +41,7 @@
         </div>
 
         <!-- Carousel -->
-        <div class="container my-5 p-3 text-white bg-dark text-center rounded-bottom">
+        <div class="container w-50 my-5 p-3 text-white bg-dark text-center rounded-bottom">
             <h2> These are the video games I play </h2>
             <div id="GameCarousel" class="carousel slide" data-bs-ride="carousel">
                 <!-- Indicators/dots -->
@@ -96,48 +96,48 @@
                     <a class="nav-link" data-bs-toggle="pill" href="#WIP">WIP</a>
                 </li>
             </ul>
-        </div>
+            <!-- TAB CONTENT-->
+            <div class="tab-content">
+                <!-- TIC TAC TOE -->
+                <div class="tab-pane my-1 p-3 text-black bg-light text-center" id="TicTacToe">
+                    <div class="row">
+                        <div class="col align-self-center">
+                            <div id="XScore" class="align-middle h-100">X = 0</div>
+                        </div>
+                        <div class="col align-self-center">
+                            <div id="tictactoePointer" value="X">It's X's turn</div>
+                            <div id="ResetButton"><button type="button" class="btn btn-success" onclick="ResetTicTacToe()">Reset</button></div>
+                        </div>
+                        <div class="col align-self-center">
+                            <div id="OScore" class="align-middle h-100 ">O = 0</div>
+                        </div>
+                    </div>
+                    <div class="row" name="0">
+                        <div class="col border border-4 tictactoebox" name="0"></div>
+                        <div class="col border border-4 tictactoebox" name="1"></div>
+                        <div class="col border border-4 tictactoebox" name="2"></div>
+                    </div>
+                    <div class="row" name="1">
+                        <div class="col border border-4 tictactoebox" name="0"></div>
+                        <div class="col border border-4 tictactoebox" name="1"></div>
+                        <div class="col border border-4 tictactoebox" name="2"></div>
+                    </div>
+                    <div class="row" name="2">
+                        <div class="col border border-4 tictactoebox" name="0"></div>
+                        <div class="col border border-4 tictactoebox" name="1"></div>
+                        <div class="col border border-4 tictactoebox" name="2"></div>
+                    </div>
+                </div>
+                
+                <!-- WIP -->
+                <div class="tab-pane my-1 p-3 text-black text-center" id="WIP">
+                    <canvas id="BabylonJSTesting" style="width:100%;">
 
-        <!-- TAB CONTENT-->
-        <div class="tab-content">
-            <!-- TIC TAC TOE -->
-            <div class="tab-pane container my-1 p-3 text-black bg-light text-center" id="TicTacToe">
-                <div class="row">
-                    <div class="col align-self-center">
-                        <div id="XScore" class="align-middle h-100">X = 0</div>
-                    </div>
-                    <div class="col align-self-center">
-                        <div id="tictactoePointer" value="X">It's X's turn</div>
-                        <div id="ResetButton"><button type="button" class="btn btn-success" onclick="ResetTicTacToe()">Reset</button></div>
-                    </div>
-                    <div class="col align-self-center">
-                        <div id="OScore" class="align-middle h-100 ">O = 0</div>
-                    </div>
-                </div>
-                <div class="row" name="0">
-                    <div class="col border border-4 tictactoebox" name="0"></div>
-                    <div class="col border border-4 tictactoebox" name="1"></div>
-                    <div class="col border border-4 tictactoebox" name="2"></div>
-                </div>
-                <div class="row" name="1">
-                    <div class="col border border-4 tictactoebox" name="0"></div>
-                    <div class="col border border-4 tictactoebox" name="1"></div>
-                    <div class="col border border-4 tictactoebox" name="2"></div>
-                </div>
-                <div class="row" name="2">
-                    <div class="col border border-4 tictactoebox" name="0"></div>
-                    <div class="col border border-4 tictactoebox" name="1"></div>
-                    <div class="col border border-4 tictactoebox" name="2"></div>
+                    </canvas>
                 </div>
             </div>
-            
-            <!-- WIP -->
-            <div class="tab-pane container my-1 p-3 text-black text-center" id="WIP">
-                <canvas id="BabylonJSTesting" style="width:100%;">
-
-                </canvas>
-            </div>
         </div>
+
         <script src="js/TicTacToe.js"></script>
         <script src="js/BabylonTest.js"></script>
     </body>
