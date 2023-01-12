@@ -24,3 +24,9 @@ a, a:hover{
     background-position: center;
     height: 20vh;
 }
+#GoogleMap {
+    height: 60vh;
+}
+.googlemapembed { 
+    border: 0;
+}

@@ -20,17 +20,7 @@
     <!-- BACKGROUND IMAGE -->
     <!-- Background image source https://www.artstation.com/artwork/GXwZgz -->
     <!-- This is for personal use only, not commercial, pls dont kill me :( -->
-    <body
-        class="bg-image"
-        style="
-            background-image: url('img/pixelwallpaper.gif');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-attachment: fixed;
-            height: 100vh;
-            font-family: PixelFont;
-        "
-    >
+    <body class="bg-image">
 
         <!-- CONTENT -->
         <div class="container my-5 p-3 text-white bg-dark text-center rounded-bottom">
@@ -38,6 +28,72 @@
             <p> This website is my personal website where I'll upload my personal projects.</p>
             <p><a class="fa-brands fa-linkedin fa-2xl text-decoration-none" href="https://www.linkedin.com/in/kendrick-mallare-a4870a25a/"></a> LinkedIn</p>
             <p><a class="fa-brands fa-square-facebook fa-2xl text-decoration-none" href="https://www.facebook.com/kendrickoliverabelador.mallare/"></a> Facebook</p>
+        </div>
+    
+        <!-- MY PROJECTS -->
+
+        <!-- TAB NAV BAR-->
+        <div class="container my-5 p-3 text-white bg-dark text-center rounded-bottom">
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#TicTacToe">Tic Tac Toe Game</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#GoogleMapLocation" onclick="initializeMap()">Google Map Track Me</a>
+                </li>
+            </ul>
+            <!-- TAB CONTENT-->
+            <div class="tab-content">
+                <!-- TIC TAC TOE -->
+                <div class="tab-pane my-1 p-3 text-black bg-light text-center" id="TicTacToe">
+                    <div class="row">
+                        <div class="col align-self-center">
+                            <div id="XScore" class="align-middle h-100">X = 0</div>
+                        </div>
+                        <div class="col align-self-center">
+                            <div id="tictactoePointer" value="X">It's X's turn</div>
+                            <div class="p-2" id="ResetButton"><button type="button" class="btn btn-success" onclick="ResetTicTacToe()">Reset</button></div>
+                        </div>
+                        <div class="col align-self-center">
+                            <div id="OScore" class="align-middle h-100 ">O = 0</div>
+                        </div>
+                    </div>
+                    <div class="row" name="0">
+                        <div class="col border border-4 tictactoebox" name="0"></div>
+                        <div class="col border border-4 tictactoebox" name="1"></div>
+                        <div class="col border border-4 tictactoebox" name="2"></div>
+                    </div>
+                    <div class="row" name="1">
+                        <div class="col border border-4 tictactoebox" name="0"></div>
+                        <div class="col border border-4 tictactoebox" name="1"></div>
+                        <div class="col border border-4 tictactoebox" name="2"></div>
+                    </div>
+                    <div class="row" name="2">
+                        <div class="col border border-4 tictactoebox" name="0"></div>
+                        <div class="col border border-4 tictactoebox" name="1"></div>
+                        <div class="col border border-4 tictactoebox" name="2"></div>
+                    </div>
+                </div>
+                
+                <!-- GOOGLE MAP -->
+                <div class="tab-pane my-1 p-3 text-center" id="GoogleMapLocation">
+                    <div class="row">
+                        <div class="col">
+                            <h3 id="googlemapinfotext">DISCLAIMER: THIS ONLY GETS YOUR LOCATION WITH PERMISSION, NO DATA IS SAVED</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="p-4"><button type="button" class="btn btn-success" onclick="findLocation()">Find my location</button></div>
+                        </div>
+                    </div>
+                    <div class="row" id="GoogleMap">
+                        <div class="col">
+                            <iframe id="googlemapembed" class="h-100 w-75" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Carousel -->
@@ -85,59 +141,8 @@
                 </button>
             </div>
         </div>
-    
-        <!-- TAB NAV BAR-->
-        <div class="container my-5 p-3 text-white bg-dark text-center rounded-bottom">
-            <ul class="nav nav-pills">
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="pill" href="#TicTacToe">Tic Tac Toe Game</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="pill" href="#WIP">WIP</a>
-                </li>
-            </ul>
-            <!-- TAB CONTENT-->
-            <div class="tab-content">
-                <!-- TIC TAC TOE -->
-                <div class="tab-pane my-1 p-3 text-black bg-light text-center" id="TicTacToe">
-                    <div class="row">
-                        <div class="col align-self-center">
-                            <div id="XScore" class="align-middle h-100">X = 0</div>
-                        </div>
-                        <div class="col align-self-center">
-                            <div id="tictactoePointer" value="X">It's X's turn</div>
-                            <div id="ResetButton"><button type="button" class="btn btn-success" onclick="ResetTicTacToe()">Reset</button></div>
-                        </div>
-                        <div class="col align-self-center">
-                            <div id="OScore" class="align-middle h-100 ">O = 0</div>
-                        </div>
-                    </div>
-                    <div class="row" name="0">
-                        <div class="col border border-4 tictactoebox" name="0"></div>
-                        <div class="col border border-4 tictactoebox" name="1"></div>
-                        <div class="col border border-4 tictactoebox" name="2"></div>
-                    </div>
-                    <div class="row" name="1">
-                        <div class="col border border-4 tictactoebox" name="0"></div>
-                        <div class="col border border-4 tictactoebox" name="1"></div>
-                        <div class="col border border-4 tictactoebox" name="2"></div>
-                    </div>
-                    <div class="row" name="2">
-                        <div class="col border border-4 tictactoebox" name="0"></div>
-                        <div class="col border border-4 tictactoebox" name="1"></div>
-                        <div class="col border border-4 tictactoebox" name="2"></div>
-                    </div>
-                </div>
-                
-                <!-- WIP -->
-                <div class="tab-pane my-1 p-3 text-black text-center" id="WIP">
-                    <canvas id="BabylonJSTesting" style="width:100%;">
 
-                    </canvas>
-                </div>
-            </div>
-        </div>
-
+        <script src="js/GoogleMap.js"></script>
         <script src="js/TicTacToe.js"></script>
         <script src="js/BabylonTest.js"></script>
     </body>
