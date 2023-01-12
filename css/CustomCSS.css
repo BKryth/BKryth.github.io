@@ -5,7 +5,7 @@
 a, a:hover{
     color: inherit;
 }
-.tictactoebox {
+.tictactoebox .carousel-image{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;

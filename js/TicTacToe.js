@@ -3,6 +3,8 @@ var TicTacToe = [
     ["4", "5", "6"],
     ["7", "8", "9"]
 ];
+var Xwins = 0;
+var Owins = 0;
 // Tic Tac Toe feature
 // function for onclick on each cell
 $(document).ready(function(){
@@ -34,7 +36,17 @@ $(document).ready(function(){
         // If value is X then true, if O then false
         ordervalue = (value == "X") ? true : false;
         TicTacToe[orderrow][ordercolumn] = value;
-        CheckTicTacToe(value);
+
+        // Check who won and tally the score
+        check = CheckTicTacToe(value);
+        if(check === "X"){
+            Xwins++;
+            $("#XScore").text("X = " + Xwins);
+        }
+        else if(check === "O"){
+            Owins++;
+            $("#OScore").text("O = " + Owins);
+        }
     })
 })
 
@@ -46,7 +58,7 @@ function CheckTicTacToe(turn)
         if(TicTacToe[i][0] === TicTacToe[i][1] && TicTacToe[i][0] === TicTacToe[i][2]){
             alert(turn + " won");
             ResetTicTacToe();
-            return;
+            return turn;
         }
     }
     // Check Columns
@@ -54,17 +66,31 @@ function CheckTicTacToe(turn)
         if(TicTacToe[0][i] === TicTacToe[1][i] && TicTacToe[0][i] === TicTacToe[2][i]){
             alert(turn + " won");
             ResetTicTacToe();
-            return;
+            return turn;
         }
     }
     // Check Diagonal
     if(TicTacToe[0][0] === TicTacToe[1][1] && TicTacToe[0][0] === TicTacToe[2][2]){
         alert(turn + " won");
         ResetTicTacToe();
-        return;
+        return turn;
     }
     if(TicTacToe[0][2] === TicTacToe[1][1] && TicTacToe[0][2] === TicTacToe[2][0]){
         alert(turn + " won");
+        ResetTicTacToe();
+        return turn;
+    }
+    
+    var allboxesfilled = true;
+    // Check if all squares filled
+    $(".tictactoebox").each(function(i){
+        if($(this).attr("value") !== "set"){
+            allboxesfilled = false;
+            return false;
+        }
+    });
+    if(allboxesfilled === true){
+        alert("Draw");
         ResetTicTacToe();
         return;
     }
