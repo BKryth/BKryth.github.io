@@ -17,6 +17,7 @@ a, a:hover{
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+    height: 50vh;
 }
 .tictactoebox {
     background-repeat: no-repeat;

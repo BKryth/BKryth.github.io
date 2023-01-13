@@ -5,7 +5,7 @@ function initializeMap(){
     const APIkey = "AIzaSyAsQAFFhdmT6pO-G077_mFuZPpmoDcKNB0";
     const defaultLoc = "&q=Philippines";
     link = "https://www.google.com/maps/embed/v1/place?key=" + APIkey;
-    defaultlink = link;
+    defaultlink = link + defaultLoc;
     $(document).ready(function(){
         $("#googlemapembed").attr("src", link + defaultLoc);
     });
