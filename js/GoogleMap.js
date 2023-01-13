@@ -1,10 +1,11 @@
 // Default link
-let link;
+let link, defaultlink;
 function initializeMap(){
     // Initialize map through JS
     const APIkey = "AIzaSyAsQAFFhdmT6pO-G077_mFuZPpmoDcKNB0";
     const defaultLoc = "&q=Philippines";
     link = "https://www.google.com/maps/embed/v1/place?key=" + APIkey;
+    defaultlink = link;
     $(document).ready(function(){
         $("#googlemapembed").attr("src", link + defaultLoc);
     });
@@ -35,7 +36,7 @@ function findLocation(){
 function handleLocationError(browserHasGeolocation){
     $(document).ready(function(){
         // Reset Map to default
-        $("#googlemapembed").attr("src", link);
+        $("#googlemapembed").attr("src", defaultlink);
         // Send message
         (browserHasGeolocation === true) ? $("#googlemapinfotext").text("Somethings not right...") : $("#googlemapinfotext").text("Need Geolocation support...")
     });
